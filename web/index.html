@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://zekunc.github.io/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="./前言 _ ZekunC.github.io_files/style.css">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>前言 | ZekunC.github.io</title>
+<meta name="generator" content="Jekyll v3.7.4">
+<meta property="og:title" content="前言">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Practice coding and share my study notes as a SE BEGINNER:)">
+<meta property="og:description" content="Practice coding and share my study notes as a SE BEGINNER:)">
+<link rel="canonical" href="https://zekunc.github.io/">
+<meta property="og:url" content="https://zekunc.github.io/">
+<meta property="og:site_name" content="ZekunC.github.io">
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"前言","url":"https://zekunc.github.io/","name":"ZekunC.github.io","description":"Practice coding and share my study notes as a SE BEGINNER:)","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ZekunC/ZekunC.github.io">View on GitHub</a>
+
+          <h1 id="project_title">简易的前后端交互教程</h1>
+          <h2 id="project_tagline"> ZekunC | Practice coding and share my study notes as a SE BEGINNER:)</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="前言">前言</h1>
+<ul>
+  <li>
+    <p><strong>我为什么写这篇文章</strong><br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近有些同学问我，说老师的那个TEST项目为什么在<strong>‘我的电脑‘</strong>上不能运行，为什么不能导入，为什么前端和<strong>java</strong>不能交互，为什么……….<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这些问题是任何初学的同学都会遇到的，我在一个星期前也遇到了同样的问题，不过最后我还是将它们都deal掉了。<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了统一回答这些问题，节省大家问问题的时间，并且帮助那些零基础的同学，我写下了这篇文章。在这篇文章中，我将详细的告诉大家如何配置、运行老师发的项目，请大家详细阅读，并按照步骤step by step，相信大家跟着步骤做完之后都可以以运行成功的，<strong>如果不成功，也可以找到自己哪一步出错了，此时再去问老师或百度，效果会更好，不要自己没有动手，就去问问题，这样是解决不了的</strong>。<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另外，本文章主要是为了打通前端与后端的简单交互，所以前端的炫酷的页面效果就要大家自行解决了，我们只做界面很简单（想做出好的界面效果，戳这里-&gt;<a href="http://www.jeasyui.net/">easyui中文网</a>)但内容足够我们学习并使用的项目啦！</p>
+  </li>
+  <li>
+    <p><strong>文章结构</strong></p>
+    <ul>
+      <li>一. 预备知识与软件的安装
+        <ul>
+          <li>1.1 初窥web</li>
+          <li>1.2 安装软件</li>
+        </ul>
+      </li>
+      <li>二. 正式建立web项目-——登录部分
+        <ul>
+          <li>2.1 在eclipse中建立动态项目</li>
+          <li>2.2 创建servlet</li>
+          <li>2.3 创建前端网页</li>
+          <li>2.4 运行web项目的登录部分</li>
+          <li>2.5 你可能想问的问题与错误</li>
+        </ul>
+      </li>
+      <li>三. 查询EMP表中的数据到AccessRecord.html中
+        <ul>
+          <li>3.1 修改XData.java</li>
+          <li>3.2 修改AccessRecord.html中的内容</li>
+          <li>3.3 查询EMP表中的内容</li>
+        </ul>
+      </li>
+      <li>附件：本文章的项目源码</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="一-预备知识与软件的安装">一. 预备知识与软件的安装</h1>
+<h2 id="11--初窥web">1.1  初窥web</h2>
+<ol>
+  <li>前端与中介的交互<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们写完一个html+css+js页面后，由<code class="highlighter-rouge">&lt; script &gt; &lt; /script &gt;</code>中的代码向后台发送请求，发送给谁呢？我们知道，现在主流的web框架有3大种，php, java，.net(c#)，我们的请求其实就是给了他们，我们现在用的就是java。</li>
+  <li>
+    <p>中介与数据库的交互<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java接受到请求后，就通过jdbc或者其他方式从最后台的oracle或其他数据库中把数据拿出来，对请求进行回应，发送给前端的页面。说的通俗一点，就是前端与java交互，java又与数据库进行交互，java的作用就是一个数据传输的媒介而已啦！</p>
+  </li>
+  <li>我们要做什么？<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所以我们要搞定两大难点： 1. 前端如何发送请求给java(在j2ee中又称servlet)  2. java怎么与oracle进行连接</li>
+</ol>
+
+<h2 id="12-安装软件">1.2 安装软件</h2>
+
+<ol>
+  <li>
+    <p>本文的测试环境：<strong>eclipse+tomcat7.0+oracle11g</strong>，</p>
+  </li>
+  <li>
+    <p>解压老师发的test文件夹，点击这里下载，位置随意<a href="src/test.zip" title="test">src/test.zip</a> <strong>什么也不需要做！！！</strong></p>
+  </li>
+  <li>
+    <p>打开eclipse。想能建立web项目，必须安装相应的插件，或者你一开始下载的此软件的时候它就已经自己按好了，步骤可以见这个链接 <a href="https://jingyan.baidu.com/article/76a7e40911c799fc3b6e15eb.html">eclipse搭建web项目</a>。搞定之后，出现这个界面说明成功了,<strong>先不要点击</strong>
+<img src="./前言 _ ZekunC.github.io_files/showweb.png" alt="安装插件成功"></p>
+  </li>
+  <li>安装tomcat，这是个什么东西？简单地说，就是一个服务器，如果没有它，你的前端就不能和java进行通信，类似于刚开学的时候老师讲的iis服务。一般的版本都是tomcat7.0，点击这里直接下载<a href="src/apache-tomcat-7.0.91-windows-x64.zip" title="tomcat7.0">src/apache-tomcat-7.0.91-windows-x64.zip</a> 然后解压，位置随意。（免安装）。然后打开文件夹，如图
+<img src="./前言 _ ZekunC.github.io_files/tomcat_1.png" alt="tomcat">
+<img src="./前言 _ ZekunC.github.io_files/tomcat_2.png" alt="tomcat">
+点击<code class="highlighter-rouge">startup.bat</code>,如图
+<img src="./前言 _ ZekunC.github.io_files/tomcat_3.png" alt="tomcat">，
+正常情况下会出现黑窗口，在不停地输出，直到它输出<code class="highlighter-rouge"> Server startup in 4335 ms</code>，说明已经启动成功了（但不要关闭此窗口！！）如图所示：
+<img src="./前言 _ ZekunC.github.io_files/tomcat_4.png" alt="tomcat">
+现在我们去浏览器输入地址<code class="highlighter-rouge">http://127.0.0.1:8080</code> （注意你的8080端口是否被原来占用过，默认是不会的），浏览器会出现一只猫！！！！如图：
+<img src="./前言 _ ZekunC.github.io_files/tomcat_5.png" alt="tomcat">
+然后我们就可以讲刚才的那个黑窗口关闭了。接着，在eclipse中点击&nbsp;<code class="highlighter-rouge">窗口-&gt;首选项-&gt;Server-&gt;Runtime envirenment-&gt;右侧的Add按钮-&gt;选择Apache_tomcat7.0</code> 如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_2.png" alt="new">
+<strong>不要勾选&nbsp;<code class="highlighter-rouge">create a local server</code></strong>,点击下一步，然后选择<code class="highlighter-rouge">Browser按钮</code>,选择你解压完tomacat的那个文件夹，记住，选择的不是<code class="highlighter-rouge">bin</code>，而是<code class="highlighter-rouge">bin</code>上一层的文件夹，如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_3.png" alt="tomcat">
+然后点击完成，其余我没有说到的框框都<strong>默认</strong>就可以了。如图：
+<img src="./前言 _ ZekunC.github.io_files/new_4.png" alt="new">
+<strong>由于我之前已经配置过服务器了，所以这里可能和你们的框框有所不同，你们可能会出现下图所示的框，如果出现了，按照图中内容填写</strong>：
+<img src="./前言 _ ZekunC.github.io_files/run_2.png" alt="run"></li>
+  <li>至此，最重要的两个东西我们已经安装完毕了，等等..我们的数据库呢？没错，你现在要安装数据库了，我安装的是oracle11g,选修了oracle的同学应该都装上了，并且确保你的用户名和密码可以登录，（sqlserver应该类似，大家可以自行搜索，我就不赘述了，<strong>接下来的实验我都是以oracle进行操作的</strong>，所以用sqlserver的同学可以去百度一些资料，对照着看）</li>
+</ol>
+
+<h1 id="二-正式建立web项目登录部分">二. 正式建立web项目–登录部分</h1>
+<h2 id="21-在eclipse中建立动态项目此处最重要一定按照步骤来">2.1 在eclipse中建立动态项目（此处最重要，一定按照步骤来）</h2>
+<ol>
+  <li>打开eclipse,新建<code class="highlighter-rouge">Dynamic Web project</code>，如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_1.png" alt="new">
+在打开的窗口中，填写项目名，其余如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_5.png" alt="new">
+点击下一步，然后再点击下一步，如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_6.png" alt="new">
+<strong>最重要的一点来了，</strong>如图，我们把<code class="highlighter-rouge">Genarate a web.xml</code><strong>勾选上！！</strong>
+<img src="./前言 _ ZekunC.github.io_files/new_7.png" alt="new">
+然后点击完成按钮</li>
+</ol>
+
+<h2 id="22-创建servlet">2.2 创建servlet</h2>
+<ol>
+  <li>在左侧你的项目名<code class="highlighter-rouge">TEACH_TEST-&gt;Java Resources-&gt;src</code>上，点击右键，新建<strong>servlet</strong>文件，如图所示：
+<img src="./前言 _ ZekunC.github.io_files/new_8.png" alt="new">
+然后填写包名，类名（最好将类名写为XData)，如图：
+<img src="./前言 _ ZekunC.github.io_files/new_9.png" alt="new">
+点击下一步，如图,
+<img src="./前言 _ ZekunC.github.io_files/new_10.png" alt="new">
+默认即可，点击下一步，如图：
+<img src="./前言 _ ZekunC.github.io_files/new_11.png" alt="new">
+默认即可，点击完成</li>
+  <li>创建完成后，系统会自动生成一个XData.java的文件,我们在他的import后面添加一行<code class="highlighter-rouge">import java.sql.*;</code> 注意，<strong>本文件最好不要复制</strong>，需要复制的地方我会告诉你</li>
+  <li>用记事本打开老师发的<code class="highlighter-rouge">\test\Test\src\com\ssc\XData.java</code>，将<strong>你的</strong>代码中的<code class="highlighter-rouge">doGet()</code>中的一行内容<code class="highlighter-rouge">response.getWriter().append("Served at: ").append(request.getContextPath());</code>删除，替换为老师的XData中<code class="highlighter-rouge">doGet()</code>中的内容，然后将 <code class="highlighter-rouge">case "getLogs":data=getLogs();break;</code> <code class="highlighter-rouge">case "xdelete":data=xdelete(request);break;</code>这两句话注释掉
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"action"</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+<span class="k">switch</span><span class="o">(</span><span class="n">action</span><span class="o">)</span> <span class="o">{</span>
+ <span class="k">case</span> <span class="s">"doLogin"</span><span class="o">:</span><span class="n">data</span><span class="o">=</span><span class="n">doLogin</span><span class="o">(</span><span class="n">request</span><span class="o">);</span><span class="k">break</span><span class="o">;</span>
+ <span class="c1">//case "getLogs":data=getLogs();break;        //注释掉</span>
+ <span class="c1">//case "xdelete":data=xdelete(request);break; //注释掉</span>
+<span class="o">}</span>		
+<span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+<span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+<span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>下载一个连接oracle的包<code class="highlighter-rouge">classes12.jar</code>，点击下载<a href="src/classes12.jar" title="jar包">src/classes12.jar</a>，下载位置随意，不用解压</li>
+  <li>接着，我们右击项目名<code class="highlighter-rouge">TEACH_TEST</code>，选择<code class="highlighter-rouge">属性-&gt;构建路径-&gt;添加外部Jar包</code>,如图所示：
+<img src="./前言 _ ZekunC.github.io_files/or_1.png" alt="jar包">
+选择你刚才下载好的<code class="highlighter-rouge">classes12.jar</code>选好之后，点击应用，再点击应用并关闭，如图：
+<img src="./前言 _ ZekunC.github.io_files/or_2.png" alt="jar"></li>
+  <li>我们回到<strong>自己的</strong>XData.java中，在XData类中添加<code class="highlighter-rouge">doLogin()方法</code>，将老师的<code class="highlighter-rouge">doLogin()</code>完整的复制到<strong>你的</strong>的代码里面，注意它和<code class="highlighter-rouge">doGet()</code>是同一个层次的函数，接着，在<code class="highlighter-rouge">import</code>那一堆句子后面再添加一句话<code class="highlighter-rouge">import javax.servlet.http.HttpSession;</code></li>
+  <li>然后，打开你的Oracle的两个服务，如图：
+<img src="./前言 _ ZekunC.github.io_files/or_3.png" alt="or"></li>
+  <li>登录ORacle数据库，记住你登录的用户名与密码，登录后，创建一张Users 表，插入一个用户，代码如下：
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">Users</span><span class="p">(</span>
+ <span class="n">Id</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">UserName</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">Password</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">);</span> <span class="c1">--注意大小写的问题，很严格</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">Users</span> <span class="k">values</span><span class="p">(</span><span class="s1">'001'</span><span class="p">,</span><span class="s1">'admin'</span><span class="p">,</span><span class="s1">'admin'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>回到java中，对<strong>你的</strong><code class="highlighter-rouge">doLogin()</code>方法进行修改，将<code class="highlighter-rouge">Class.forName()</code>中的内容换成<code class="highlighter-rouge">"oracle.jdbc.driver.OracleDriver"</code>；将<code class="highlighter-rouge">url=""</code>的字符串内容换成<code class="highlighter-rouge">"jdbc:oracle:thin:@127.0.0.1:1521:orcl"</code>；将<code class="highlighter-rouge">user</code>和<code class="highlighter-rouge">password</code>分别换成你登录数据库时候的用户名与密码，比如<code class="highlighter-rouge">"scott"</code>和<code class="highlighter-rouge">"tiger"</code>。</li>
+  <li>将<code class="highlighter-rouge">sql=""</code>中的字符串内容中的<code class="highlighter-rouge">top 1</code>删掉，oracle不支持</li>
+  <li>至此，java的登录部分的代码已经写完了，完整如下：
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">;</span>
+    
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+    
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="cm">/**
+ * Servlet implementation class XData
+ */</span>
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/XData"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">XData</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+       
+<span class="cm">/**
+ * @see HttpServlet#HttpServlet()
+ */</span>
+<span class="kd">public</span> <span class="nf">XData</span><span class="o">()</span> <span class="o">{</span>
+<span class="kd">super</span><span class="o">();</span>
+<span class="c1">// TODO Auto-generated constructor stub</span>
+<span class="o">}</span>
+    
+	<span class="cm">/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */</span>
+	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"action"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+		<span class="k">switch</span><span class="o">(</span><span class="n">action</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">case</span> <span class="s">"doLogin"</span><span class="o">:</span><span class="n">data</span><span class="o">=</span><span class="n">doLogin</span><span class="o">(</span><span class="n">request</span><span class="o">);</span><span class="k">break</span><span class="o">;</span>
+		<span class="c1">//	case "getLogs":data=getLogs();break; //注释掉</span>
+		<span class="c1">//	case "xdelete":data=xdelete(request);break;  //注释掉</span>
+		<span class="o">}</span>		
+		<span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+		<span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+		<span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+	<span class="o">}</span>
+    
+	<span class="cm">/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */</span>
+	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+		<span class="n">doGet</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="kd">protected</span> <span class="n">String</span> <span class="nf">doLogin</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">String</span> <span class="n">usr</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"UserName"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">pwd</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"Password"</span><span class="o">);</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">usr</span><span class="o">.</span><span class="na">trim</span><span class="o">()!=</span><span class="s">""</span><span class="o">&amp;&amp;</span><span class="n">pwd</span><span class="o">.</span><span class="na">trim</span><span class="o">()!=</span><span class="s">""</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span><span class="o">);</span>
+				<span class="n">String</span> <span class="n">url</span><span class="o">=</span><span class="s">"jdbc:oracle:thin:@127.0.0.1:1521:orcl"</span><span class="o">;</span>
+				<span class="n">String</span> <span class="n">user</span><span class="o">=</span><span class="s">"scott"</span><span class="o">;</span>
+				<span class="n">String</span> <span class="n">password</span><span class="o">=</span><span class="s">"tiger"</span><span class="o">;</span>  <span class="c1">//这里填你的密码，不一定是tiger</span>
+				<span class="n">Connection</span> <span class="n">conn</span><span class="o">=</span><span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span> <span class="n">url</span><span class="o">,</span><span class="n">user</span><span class="o">,</span><span class="n">password</span><span class="o">);</span>
+				<span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+				<span class="n">String</span> <span class="n">sql</span><span class="o">=</span><span class="s">"select  * from Users where UserName='"</span>
+				<span class="o">+</span><span class="n">usr</span><span class="o">+</span><span class="s">"' and Password='"</span><span class="o">+</span><span class="n">pwd</span><span class="o">+</span><span class="s">"'"</span><span class="o">;</span>
+				<span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+				<span class="n">String</span> <span class="n">Id</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+				<span class="n">String</span> <span class="n">UserName</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+    				
+				<span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+		<span class="c1">// 通过字段检索</span>
+		<span class="n">Id</span>  <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="s">"Id"</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+		<span class="n">UserName</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"UserName"</span><span class="o">);</span>		   
+				<span class="o">}</span>
+	<span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>			
+				<span class="k">if</span><span class="o">(</span><span class="n">UserName</span><span class="o">!=</span><span class="s">""</span><span class="o">&amp;&amp;</span><span class="n">Id</span><span class="o">!=</span><span class="s">""</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span><span class="c1">//没有Session就新建一个 </span>
+					<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"UserName"</span><span class="o">,</span><span class="n">UserName</span><span class="o">);</span><span class="c1">//在服务器端存储"键-值对" </span>
+					<span class="k">return</span> <span class="s">"{\"rlt\":\"0\"}"</span><span class="o">;</span>
+				<span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+					<span class="k">return</span> <span class="s">"{\"rlt\":\"1\"}"</span><span class="o">;</span>
+				<span class="o">}</span>
+    		
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="c1">// TODO Auto-generated catch block</span>
+				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+				<span class="k">return</span> <span class="s">"{\"rlt\":\"1\"}"</span><span class="o">;</span>
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="c1">// TODO Auto-generated catch block</span>
+				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+				<span class="k">return</span> <span class="s">"{\"rlt\":\"1\"}"</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="s">"{\"rlt\":\"1\"}"</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="23-创建前端网页">2.3 创建前端网页</h2>
+<ol>
+  <li>右击<code class="highlighter-rouge">WebContent</code>文件夹，新建html文件，文件名为<code class="highlighter-rouge">index.html</code>，如图：
+<img src="./前言 _ ZekunC.github.io_files/web_1.png" alt="web">
+点击下一步，如图：
+<img src="./前言 _ ZekunC.github.io_files/web_2.png" alt="web">
+默认即可，点击完成。</li>
+  <li>文件管理器进入到本项目的路径，一般为<code class="highlighter-rouge">eclipse/workplace/TEACH_TEST/WebContent/</code>如图：
+<img src="./前言 _ ZekunC.github.io_files/web_3.png" alt="web"></li>
+  <li>同样的，打开老师的<code class="highlighter-rouge">test\Test\WebContent</code>,将老师的<code class="highlighter-rouge">【easyui】</code>与<code class="highlighter-rouge">【js】</code><strong>文件夹</strong>拷贝到<strong>你的</strong><code class="highlighter-rouge">WebContent/</code>下面，如图：
+<img src="./前言 _ ZekunC.github.io_files/web_4.png" alt="web"></li>
+  <li>在eclipse中，右击<code class="highlighter-rouge">TEACH_TEST</code>项目名，点击<code class="highlighter-rouge">刷新</code>按钮.</li>
+  <li>我们按照2.3.1的步骤，在<code class="highlighter-rouge">WebContent下面</code>建立三个文件：<code class="highlighter-rouge">Main.html</code>和<code class="highlighter-rouge">AccessRecord.html</code>和<code class="highlighter-rouge">AccessStatistic.htmll</code>，以上步骤都完成后，你的eclipse左侧视图栏应该是这样的：
+<img src="./前言 _ ZekunC.github.io_files/web_5.png" alt="web"></li>
+  <li>打开<strong>你的</strong><code class="highlighter-rouge">index.html</code>,同时用<strong>记事本</strong>打开<strong>老师</strong>的<code class="highlighter-rouge">index.html</code>。将<strong>老师</strong>的<code class="highlighter-rouge">index.html</code>的<strong>内容</strong> <strong>全部拷贝</strong> 到你的<code class="highlighter-rouge">index.html</code>中。</li>
+  <li>
+    <p>在<strong>你的</strong><code class="highlighter-rouge">index.html</code>中，把第<strong>29行</strong>中<code class="highlighter-rouge">"Main.jsp"</code>改为<code class="highlighter-rouge">"Main.html"</code>此时，<strong>你的</strong><code class="highlighter-rouge">index.html</code>的文件代码完整如下：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"easyui/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+ <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"usr"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"pwd"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"登录"</span>  <span class="na">onclick=</span><span class="s">"doLogin()"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"t"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="kd">function</span> <span class="nx">doLogin</span><span class="p">(){</span>
+         <span class="kd">var</span> <span class="nx">usr</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#usr"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+         <span class="kd">var</span> <span class="nx">pwd</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#pwd"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+         <span class="k">if</span><span class="p">(</span><span class="nx">usr</span><span class="o">==</span><span class="s2">""</span><span class="o">||</span><span class="nx">pwd</span><span class="o">==</span><span class="s2">""</span><span class="p">){</span>
+             <span class="nx">alert</span><span class="p">(</span><span class="s2">"用户名或密码不能为空！"</span><span class="p">);</span>
+             <span class="k">return</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">"XData"</span><span class="p">,{</span>
+             <span class="s2">"action"</span><span class="p">:</span><span class="s2">"doLogin"</span><span class="p">,</span>
+             <span class="s2">"UserName"</span><span class="p">:</span><span class="nx">usr</span><span class="p">,</span>
+             <span class="s2">"Password"</span><span class="p">:</span><span class="nx">pwd</span>
+             <span class="p">},</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+                 <span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">rlt</span><span class="o">==</span><span class="s2">"0"</span><span class="p">){</span>
+                     <span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"Main.html"</span><span class="p">;</span>
+                 <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                     <span class="nx">alert</span><span class="p">(</span><span class="s2">"用户名或密码不正确！"</span><span class="p">);</span>
+                 <span class="p">}</span>
+         <span class="p">})</span>
+     <span class="p">}</span>
+ <span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>打开<strong>你的</strong><code class="highlighter-rouge">Main.html</code>,同时用<strong>记事本</strong>打开<strong>老师</strong>的<code class="highlighter-rouge">Main.html</code>。将<strong>老师</strong>的<code class="highlighter-rouge">Main.html</code>的<strong>内容</strong> <strong>全部拷贝</strong> 到你的<code class="highlighter-rouge">Main.html</code>中。此时，<strong>你的</strong><code class="highlighter-rouge">Main.html</code>文件代码完整如下：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ 	<span class="nt">&lt;html&gt;</span>
+ 		<span class="nt">&lt;head&gt;</span>
+ 		<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"easyui/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"easyui/jquery.easyui.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"easyui/themes/default/easyui.css"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"easyui/themes/icon.css"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;style&gt;</span>
+ <span class="nc">.nav</span><span class="p">{</span><span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">lightgray</span><span class="p">;</span><span class="nl">padding</span><span class="p">:</span><span class="m">3px</span><span class="p">;</span><span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;}</span>
+ <span class="nt">&lt;/style&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+ <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+ <span class="nx">$</span><span class="p">(</span><span class="s2">"#mylayout"</span><span class="p">).</span><span class="nx">height</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+ <span class="p">})</span>
+ <span class="kd">function</span> <span class="nx">goUrl</span><span class="p">(</span><span class="nx">url</span><span class="p">){</span>
+ <span class="nx">$</span><span class="p">(</span><span class="s2">"#M"</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"easyui-layout"</span> <span class="na">style=</span><span class="s">"width:100%;"</span><span class="nt">&gt;</span>
+
+ <span class="nt">&lt;div</span> <span class="na">data-options=</span><span class="s">"region:'north'"</span> <span class="na">style=</span><span class="s">"height:50px"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">data-options=</span><span class="s">"region:'east',split:true"</span> <span class="na">title=</span><span class="s">"East"</span> <span class="na">style=</span><span class="s">"width:100px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">data-options=</span><span class="s">"region:'west',split:true"</span> <span class="na">title=</span><span class="s">"West"</span> <span class="na">style=</span><span class="s">"width:100px;"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav"</span> <span class="na">onclick=</span><span class="s">"goUrl('AccessRecord.html')"</span><span class="nt">&gt;</span>访问记录<span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav"</span> <span class="na">onclick=</span><span class="s">"goUrl('AccessStatistic.html')"</span><span class="nt">&gt;</span>访问统计<span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">data-options=</span><span class="s">"region:'center',title:'Main Title',iconCls:'icon-ok'"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"M"</span><span class="nt">&gt;&lt;/div&gt;</span>	
+ <span class="nt">&lt;/div&gt;</span>
+
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>此时，你会发现你并没有写<code class="highlighter-rouge">AccessRecord.html</code>与<code class="highlighter-rouge">AccessStatistic.html</code>的内容，不过没关系，它不影响你的登录，如果你想呈现一定的效果，可以在这两个html中的<code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code>中分别添加<code class="highlighter-rouge">&lt;h1&gt;这是AccessRecord.html&lt;/h1&gt;</code>;<code class="highlighter-rouge">&lt;h1&gt;这是AccessStatistic.html&lt;/h1&gt;</code>。此时，<code class="highlighter-rouge">AccessRecord.html</code>中的完整代码如下：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+     <span class="nt">&lt;h1&gt;</span>这是AccessRecord.html<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+ ```
+ `AccessStatistic.html`中的完整代码如下：
+ ```
+
+ <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+     <span class="nt">&lt;h1&gt;</span>这是AccessStatistic.html<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="24-运行web项目的登录部分">2.4 运行web项目的登录部分</h2>
+<ol>
+  <li><code class="highlighter-rouge">ctrl+s</code>保存你在eclipse上修改过的文件</li>
+  <li>接着，我们右击项目名<code class="highlighter-rouge">TEACH_TEST</code>，选择<code class="highlighter-rouge">属性-&gt;构建路径</code>,鼠标左键我们已经导入好的<code class="highlighter-rouge">classes12.jar</code>，点击右边的<code class="highlighter-rouge">移除按钮</code>，移除完成后，点击<code class="highlighter-rouge">应用</code>，再点击<code class="highlighter-rouge">应用并关闭</code>如图：
+<img src="./前言 _ ZekunC.github.io_files/web_6.png" alt="web"></li>
+  <li><strong>本步骤十分重要，切记不可跳过！！！！</strong>还记得我们下载好的<code class="highlighter-rouge">classes12.jar</code>吗？现在我们把它复制到你的你的项目<code class="highlighter-rouge">eclipse/work_place/TEACH_TEST/WebConTent/WEB-INF/lib/</code>下面，如图：
+<img src="./前言 _ ZekunC.github.io_files/web_7.png" alt="web">
+,之后，我们右击项目名<code class="highlighter-rouge">TEACH_TEST</code>,点击<code class="highlighter-rouge">刷新</code>按钮。然后，我们再次右击项目名<code class="highlighter-rouge">TEACH_TEST</code>，选择<code class="highlighter-rouge">属性-&gt;构建路径-&gt;添加外部Jar包</code>,如图所示：
+<img src="./前言 _ ZekunC.github.io_files/or_1.png" alt="jar包">
+选择你刚才复制过来的<code class="highlighter-rouge">eclipse/work_place/TEACH_TEST/WebConTent/WEB-INF/lib/classes12.jar</code>选好之后，点击<code class="highlighter-rouge">应用</code>，再<code class="highlighter-rouge">点击应用并关闭</code>，<strong>记住，路径必须是在<code class="highlighter-rouge">web-inf/lib/classes12.jar</code></strong>。如图：
+<img src="./前言 _ ZekunC.github.io_files/web_8.png" alt="web"></li>
+  <li>打开<code class="highlighter-rouge">index.html</code>,点击绿色的运行按钮，如图：
+<img src="./前言 _ ZekunC.github.io_files/run_1.png" alt="run"></li>
+  <li>此时会出现一个框框，如图：
+<img src="./前言 _ ZekunC.github.io_files/run_2.png" alt="run">
+<strong>注意：重要！！！！！将<code class="highlighter-rouge">server's host name</code></strong>从原来的<code class="highlighter-rouge">localhost</code>改为<code class="highlighter-rouge">127.0.0.1</code>，然后其余默认，点击下一步
+然后会出现：
+<img src="./前言 _ ZekunC.github.io_files/run_3.png" alt="run">
+我们点击完成</li>
+  <li>此时，在控制台会出现一堆红字，如图：
+<img src="./前言 _ ZekunC.github.io_files/s_1.png" alt="s">
+看到<code class="highlighter-rouge">server startup in 4222ms</code> 说明服务已经启动</li>
+  <li>此时，我们在eclipse中将它自动弹出的这个窗口中的地址复制，如图：
+<img src="./前言 _ ZekunC.github.io_files/copy.png" alt="copy"></li>
+  <li>打开IE或者360浏览器，将地址输入，此时就出现我们的登录界面了，我们输入我们在oracle中建立的Uers表中的用户名：<code class="highlighter-rouge">admin</code>；密码：<code class="highlighter-rouge">admin</code>，如图：
+<img src="./前言 _ ZekunC.github.io_files/s_2.png" alt="s"></li>
+  <li>点击登录，我们就进入到了<code class="highlighter-rouge">Main.html</code>中了，左侧是点击的选项按钮，点击第一个，<code class="highlighter-rouge">CENTER</code>区中就显示<code class="highlighter-rouge">AccessRecord.html</code>中的内容，点击第二个，<code class="highlighter-rouge">CENTER</code>区就显示<code class="highlighter-rouge">AccessStatistic.html</code>中的内容：如图：
+<img src="./前言 _ ZekunC.github.io_files/s_3.png" alt="s"></li>
+  <li>至此，我们的登录部分就完成了，至于查询部分，见本文章第三部分</li>
+</ol>
+
+<h2 id="25-你可能想问的问题与错误">2.5 你可能想问的问题与错误</h2>
+<ol>
+  <li>
+    <blockquote>
+      <p>问：我在运行时，控制台显示<code class="highlighter-rouge">classnotfoundexception</code>，怎么破？
+答：检查你的<code class="highlighter-rouge">classes12.jar</code>是否放在了<code class="highlighter-rouge">WebContent/web-inf/lib/</code>下面，并且外部添加<code class="highlighter-rouge">jar</code>包的时候选择的路径是否是上述路径，<strong>对应于文章的<code class="highlighter-rouge">2.4.1-2.4.3</code></strong></p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>问：我没有选修oracle，怎么破？
+答：我没有连接过sqlserver,但是java连接oracle和连接sqlserver的步骤几乎相同，只不过就是<strong>导入的包不同</strong>，<code class="highlighter-rouge">Class.forName()</code>和<code class="highlighter-rouge">url</code>的内容不同，即<code class="highlighter-rouge">XData.java</code>中这几句话不同而已：</p>
+      <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">url</span><span class="o">=</span><span class="s">"jdbc:oracle:thin:@127.0.0.1:1521:orcl"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">user</span><span class="o">=</span><span class="s">"scott"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">password</span><span class="o">=</span><span class="s">"tiger"</span><span class="o">;</span>  <span class="c1">//这里填你的密码，不一定是tiger</span>
+</code></pre></div>      </div>
+      <p>不过幸好老师的XData连接的就是sqlserver，大家可以参考老师的代码进行修改啦，如果仍疑惑，戳这里-&gt;<a href="https://www.cnblogs.com/chlyA-F/p/6075675.html" title="java连接sqlserver">https://www.cnblogs.com/chlyA-F/p/6075675.html</a>。</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>问：<code class="highlighter-rouge">localhost:8080/项目名</code>在浏览器中显示404，怎么破？
+答：将你原来的服务器删除，重新安装，<strong>重要的是在eclipse中选择server</strong>，并且把<code class="highlighter-rouge">server host name</code>写成<code class="highlighter-rouge">127.0.0.1</code>而不是<code class="highlighter-rouge">localhost</code>，因为有的同学<code class="highlighter-rouge">localhost</code>并没有于<code class="highlighter-rouge">127.0.0.1</code>对应。你可以在<strong>本文章中</strong>的<code class="highlighter-rouge">1.2.4</code>与<code class="highlighter-rouge">2.4.5</code>找到相应解释。</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>问：我创建服务器的时候出过错，删除又重新创建，结果左侧栏突然出现好多红色的X号
+答：右击<code class="highlighter-rouge">项目名-&gt;属性-&gt;构建路径-&gt;添加库-&gt;Server Runtime-&gt;Apachachetomat7</code>如图：
+<img src="./前言 _ ZekunC.github.io_files/bug_1.png" alt="bug">
+<img src="./前言 _ ZekunC.github.io_files/bug_2.png" alt="bug"></p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>问：显示不能连接到数据库
+答：检查oracle的两个服务是否开启，详见<strong>本文章</strong><code class="highlighter-rouge">2.2.7</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>问：为什么我就是登录不成功啊？？？？
+答：此时此刻，就可以问老师啦！</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h1 id="三--查询emp表中的数据到accessrecordhtml中">三.  查询EMP表中的数据到AccessRecord.html中</h1>
+
+<blockquote>
+  <p>问：我想让数据库中的表的内容以表格的形式在main.html中显示，怎么破？</p>
+</blockquote>
+
+<h2 id="31-修改xdatajava">3.1 修改XData.java</h2>
+<ol>
+  <li>将老师的<code class="highlighter-rouge">getLogs()</code>复制到你的<code class="highlighter-rouge">XData</code>中，然后修改连接数据库的内容，改正后的代码即：
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">url</span><span class="o">=</span><span class="s">"jdbc:oracle:thin:@127.0.0.1:1521:orcl"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">user</span><span class="o">=</span><span class="s">"scott"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">password</span><span class="o">=</span><span class="s">"tiger"</span><span class="o">;</span>  <span class="c1">//这里填你的密码，不一定是tiger</span>
+</code></pre></div>    </div>
+    <p>同时别忘了把<code class="highlighter-rouge">doGet()</code>中的<code class="highlighter-rouge">		//	case "getLogs":data=getLogs();break;         //注释掉
+</code>这一行取消注释</p>
+  </li>
+  <li>修改<code class="highlighter-rouge">sql语句</code>与<code class="highlighter-rouge">下面的语句</code>，代码如下：
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">sql</span><span class="o">=</span><span class="s">"select   * from EMP"</span><span class="o">;</span>
+<span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+<span class="n">StringBuilder</span> <span class="n">sb</span><span class="o">=</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+<span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"["</span><span class="o">);</span>
+<span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+   <span class="c1">// 通过字段检索</span>
+   <span class="kt">int</span> <span class="n">id</span>  <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"EMPNO"</span><span class="o">);</span>
+   <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"ENAME"</span><span class="o">);</span>
+   <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"{\"Id\":\""</span><span class="o">+</span><span class="n">id</span><span class="o">+</span><span class="s">"\",\"Name\":\""</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">"\"},"</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>此时完整的getLogs()函数代码如下：
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protected</span> <span class="n">String</span> <span class="nf">getLogs</span><span class="o">()</span> <span class="o">{</span>
+     <span class="k">try</span> <span class="o">{</span>
+         <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span><span class="o">);</span>
+         <span class="n">String</span> <span class="n">url</span><span class="o">=</span><span class="s">"jdbc:oracle:thin:@127.0.0.1:1521:orcl"</span><span class="o">;</span>
+         <span class="n">String</span> <span class="n">user</span><span class="o">=</span><span class="s">"scott"</span><span class="o">;</span>
+         <span class="n">String</span> <span class="n">password</span><span class="o">=</span><span class="s">"tiger"</span><span class="o">;</span>  <span class="c1">//这里填你的密码，不一定是tiger</span>
+         <span class="n">Connection</span> <span class="n">conn</span><span class="o">=</span><span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span> <span class="n">url</span><span class="o">,</span><span class="n">user</span><span class="o">,</span><span class="n">password</span><span class="o">);</span>
+         <span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+         <span class="n">String</span> <span class="n">sql</span><span class="o">=</span><span class="s">"select   * from EMP"</span><span class="o">;</span>
+         <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+         <span class="n">StringBuilder</span> <span class="n">sb</span><span class="o">=</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+         <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"["</span><span class="o">);</span>
+         <span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+                 <span class="c1">// 通过字段检索</span>
+                 <span class="kt">int</span> <span class="n">id</span>  <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"EMPNO"</span><span class="o">);</span>
+                 <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"ENAME"</span><span class="o">);</span>
+                 <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"{\"Id\":\""</span><span class="o">+</span><span class="n">id</span><span class="o">+</span><span class="s">"\",\"Name\":\""</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">"\"},"</span><span class="o">);</span>
+                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+         <span class="o">}</span>
+         <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+         <span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+         <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>			
+         <span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="mi">1</span><span class="o">);</span>
+         <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"]"</span><span class="o">);</span>
+         <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">// TODO Auto-generated catch block</span>
+         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">// TODO Auto-generated catch block</span>
+         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+     <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="32-修改accessrecordhtml中的内容">3.2 修改AccessRecord.html中的内容</h2>
+
+<ol>
+  <li>
+    <p>将<strong>老师</strong>的<code class="highlighter-rouge">AccessRecord.html</code>中的内容完整拷贝到<strong>你的</strong><code class="highlighter-rouge">AccessRecord.html</code>中，<strong>不用修改任何代码</strong>，完整代码如下：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;style&gt;</span>
+ <span class="nf">#dtb</span><span class="o">,</span><span class="nf">#dtb</span> <span class="nt">tr</span> <span class="nt">td</span><span class="p">{</span><span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">lightgray</span><span class="p">;}</span>
+ <span class="nf">#dtb</span><span class="p">{</span><span class="nl">width</span><span class="p">:</span><span class="m">100%</span><span class="p">;}</span>
+ <span class="nt">&lt;/style&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+ <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+     <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">"XData"</span><span class="p">,{</span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"getLogs"</span><span class="p">},</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+         <span class="kd">var</span> <span class="nx">tb</span><span class="o">=</span><span class="s2">"&lt;table id='dtb'&gt;"</span><span class="p">;</span>
+         <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">item</span><span class="p">){</span>
+             <span class="nx">tb</span><span class="o">+=</span><span class="s2">"&lt;tr&gt;&lt;td&gt;"</span><span class="o">+</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"&lt;/td&gt;&lt;td&gt;"</span><span class="o">+</span><span class="nx">item</span><span class="p">.</span><span class="nx">Name</span><span class="o">+</span><span class="s2">"&lt;/td&gt;&lt;/tr&gt;"</span>
+         <span class="p">})</span>
+         <span class="nx">tb</span><span class="o">+=</span><span class="s2">"&lt;/table&gt;"</span><span class="p">;</span>
+         <span class="nx">$</span><span class="p">(</span><span class="s2">"#tb"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">tb</span><span class="p">);</span>
+     <span class="p">})</span>
+ <span class="p">})</span>
+ <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tb"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">ctrl+s</code>保存你所做的修改</p>
+  </li>
+</ol>
+
+<h2 id="33-查询emp表中的内容">3.3 查询EMP表中的内容</h2>
+
+<ol>
+  <li>仍然点击<code class="highlighter-rouge">index.html</code>,然后运行，登录。步骤见<code class="highlighter-rouge">2.4.4~2.4.10</code></li>
+  <li>
+    <p>点击左侧访问记录，中间就会出现EMP中的姓名，如图：
+<img src="./前言 _ ZekunC.github.io_files/ok.png" alt="ok"></p>
+  </li>
+  <li>此时此刻，我们的这个项目就完毕了，至于删除和增加操作，这里就不细说了，因为要涉及到主键与外键的级联问题，不过，本项目搞定就足够我们学习啦！！！拜拜~~~</li>
+</ol>
+
+<h1 id="附件本文章的项目源码点击下载-srcteach_testzip">附件：本文章的项目源码，点击下载-&gt;<a href="src/TEACH_TEST.zip" title="项目源码">src/TEACH_TEST.zip</a></h1>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p>Published with <a href="https://pages.github.com/">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  
+
+</body></html>
