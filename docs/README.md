@@ -1,14 +1,14 @@
 
-### About Us <!-- {docsify-ignore-all} -->
+## About Us <!-- {docsify-ignore-all} -->
 
 We are ....
 
-### News
+## News
 
 - :tada: A new [paper](https://www.baidu.com) is **ACCEPTED**! For more details click [here](/publications).
 - 
 
-### Publications
+## Publications
 
 For full list click [here](publications).
 
